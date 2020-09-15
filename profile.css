@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body{
+    font-family:  'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    grid-template-areas: 'navigation' 'container';
+    grid-gap: 4rem 0;
+    align-content: start;
+    background-color: rgba(211, 211, 211, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+header .navigation{
+    grid-area: navigation;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    background-color: #fff;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+}
+
+.nav{
+    justify-content: space-evenly;
+}
+
+li{
+    list-style: none;
+}
+
+
+.thumb-nail{
+    margin-top: 2px;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 10px;
+}
+
+
+.search{
+    border: 1px solid lightgray;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.options li.option {
+    padding: 0 0.8rem;
+    width: 100%;
+    z-index: 200;
+}
+
+.options-section .options li.option:hover {
+    background-color: lightgray;
+    border-radius: 100%;
+}
+
+
+
+
+
+.container{
+    /* margin-top: 50px;    */
+    grid-area: container;
+    margin: 0 auto;
+    display: block;
+}
+
+.profile {
+    padding: 1rem;
+    display: grid;
+    grid-template-areas: 'profilePic profilePic topRow topRow topRow' 'profilePic profilePic profileInfo profileInfo profileInfo' 'profilePic profilePic bio bio bio';
+    border-bottom: 1px solid lightgray;
+    justify-content: space-evenly;
+}
+
+.profile .profile-img {
+    margin: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+
+.profile .profile-img img.profile-pic{
+    width: inherit;
+    height: inherit;
+    border-radius: 100%;
+}
+
+
+.profile  .top-row{
+    grid-area: topRow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.profile  .name{
+    grid-area: name;
+    font-size: 2rem;
+}
+.profile  .edit-profile{
+    grid-area: editProfile;
+}
+
+.profile  .edit-profile button{
+    border: 1px solid rgba(119, 119, 119, 0.192);
+    border-radius: 4px;
+    background-color: lightgray;
+    width: 8em;
+    height: 3em;
+
+}
+
+.profile  .settings{
+    grid-area: settings;
+    padding: 0.2em;
+}
+
+.profile  .profile-info{
+    grid-area: profileInfo;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+.profile  .profile-info .text-info{
+    display: block;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: lightgray;
+}
+
+.profile  .bio{
+    font-size: 1.5rem;
+    grid-area: bio
+}
+
+
+.posts{
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    grid-gap: 2rem;
+}
+
+.posts .post img.img-source {
+    width: 20em;
+    height: 20em;
+}
+
+@media (max-width: 500px){
+    .search{
+        width: 4rem;
+    }
+    .profile {
+        display: grid;
+        grid-template-areas: 'profilePic topRow topRow' 'profileInfo profileInfo profileInfo' 'bio bio bio';
+        grid-gap: 1rem;
+    }
+    
+
+    .profile  .top-row{
+        grid-area: topRow;
+        display: grid;
+        /* grid-template-rows: 1fr 1fr 1fr; */
+        grid-template-areas: 'name name' 'editProfile settings';
+        grid-gap: 1rem;
+        height: 100%;
+    }
+    .profile  .bio{
+        text-align: center;
+    }
+        
+
+    .profile .profile-img {
+        grid-area: profilePic;
+        margin: 0 auto;
+    }
+    .profile  .name{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .profile  .profile-info{
+        padding: 0;
+    }
+    
+    .posts{
+        margin: 0.5rem 0;
+        justify-content: center;
+        grid-gap: 0.5rem;
+    }
+    
+    .posts .post img.img-source {
+        width: 7em;
+        height: 7em;
+    }    
+            
+    
+}
+
+
+
+
+
+/* .profile  .profile-info > div:last-child{
+    border: none;
+} */
+
+
