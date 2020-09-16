@@ -18,7 +18,7 @@ header .navigation{
     width: 100%;
     height: auto;
     border-bottom: 1px solid lightgray;
-    padding: 10px;
+    padding: 1rem;
     background-color: #fff;
 }
 
@@ -177,11 +177,8 @@ li{
     .search{
         width: 4rem;
     }
-    .container{
-        width: 100%;
-    }
     .profile {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         display: grid;
         grid-gap: 1rem;
@@ -211,7 +208,7 @@ li{
         /* grid-area: profilePic; */
         grid-row: 1;
         grid-column: 1;
-        margin: 0 auto;
+        margin: 1em auto;
     }
 
 
@@ -237,6 +234,10 @@ li{
         grid-gap: 0 0.3rem;
     }
 
+    .posts .post{
+        padding: 0;
+    }
+    
     .posts .post img.img-source {
         width: 10em;
         height: 10em;
